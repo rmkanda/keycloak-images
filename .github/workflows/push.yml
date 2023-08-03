@@ -33,6 +33,13 @@ jobs:
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+      - name: Pull Images
+        id: loop
+        run: |
+          for tag in ["22.0.1", "22.0.0"]
+          do
+            docker pull quay.io/keycloak/keycloak:$tag
+          done
       - name: Pull Image
         run: |
           docker pull quay.io/keycloak/keycloak:22.0.1
