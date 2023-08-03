@@ -39,7 +39,6 @@ jobs:
         run: |          
           docker tag quay.io/keycloak/keycloak:22.0.1 ghcr.io/rmkanda/keycloak-images/keycloak:22.0.1
       - name: Push To GHCR
-        uses: ./
         id: push
         with:
           username: ${{ github.actor }}
