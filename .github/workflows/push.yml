@@ -32,9 +32,11 @@ jobs:
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
-      - name: run backend tests using example.com/my-image
+      - name: Pull Image
         run: |
-          docker pull quay.io/keycloak/keycloak:22.0.1 \
+          docker pull quay.io/keycloak/keycloak:22.0.1
+      - name: Tag Image
+        run: |          
           docker tag quay.io/keycloak/keycloak:22.0.1 ghcr.io/rmkanda/keycloak-images/keycloak:22.0.1
       - name: Push To GHCR
         uses: ./
