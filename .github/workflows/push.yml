@@ -36,7 +36,7 @@ jobs:
       - name: Pull Images
         id: loop
         run: |
-          for tag in ["22.0.1", "22.0.0"]
+          for tag in 22.0.1 22.0.0
           do
             docker pull quay.io/keycloak/keycloak:$tag
           done
