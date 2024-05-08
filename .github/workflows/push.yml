@@ -36,14 +36,14 @@ jobs:
       - name: Pull Images
         id: loop
         run: |
-          for tag in 24.0.1 23.0.7 22.0.5 22.0.0 21.0.1 21.1.2 18.0.0-legacy
+          for tag in 24.0.4 23.0.7 22.0.5 22.0.0 21.0.1 21.1.2 18.0.0-legacy
           do
             docker pull quay.io/keycloak/keycloak:$tag
           done
       - name: Tag Images
         id: loop2
         run: |
-          for tag in 24.0.1 23.0.7 22.0.5 22.0.0 21.0.1 21.1.2 18.0.0-legacy
+          for tag in 24.0.4 23.0.7 22.0.5 22.0.0 21.0.1 21.1.2 18.0.0-legacy
           do
             docker tag quay.io/keycloak/keycloak:$tag ghcr.io/rmkanda/keycloak-images/keycloak:$tag
           done
@@ -57,7 +57,7 @@ jobs:
       - name: Push Images
         id: loop3
         run: |
-          for tag in 24.0.1 23.0.7 22.0.5 22.0.0 21.0.1 21.1.2 18.0.0-legacy
+          for tag in 24.0.4 23.0.7 22.0.5 22.0.0 21.0.1 21.1.2 18.0.0-legacy
           do
             docker push ghcr.io/rmkanda/keycloak-images/keycloak:$tag
           done
